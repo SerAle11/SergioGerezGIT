@@ -1,0 +1,364 @@
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~
+$ git config --global user.name Sergio Gerez
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~
+$ git config --global user.name "Sergio Gerez"
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~
+$ git config --global user.email gerezsergio19@gmail.com
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~
+$ cd desktop
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop
+$ git clone https://github.com/SerAle11/SergioGerezGIT
+Cloning into 'SergioGerezGIT'...
+warning: You appear to have cloned an empty repository.
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop
+$ cd SergioGerezGIT
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ nano Agenda.txt
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Agenda.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git add Agenda.txt
+warning: in the working copy of 'Agenda.txt', LF will be replaced by CRLF the next time Git touches it
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Agenda.txt
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ nano Agenda.txt
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Agenda.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Agenda.txt
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git diff Agenda.txt
+warning: in the working copy of 'Agenda.txt', LF will be replaced by CRLF the next time Git touches it
+diff --git a/Agenda.txt b/Agenda.txt
+index 8982549..2cbcf96 100644
+--- a/Agenda.txt
++++ b/Agenda.txt
+@@ -1,2 +1,4 @@
+ Carlos = 123456789
++Lucas = 987654321
++
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Agenda.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Agenda.txt
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git add -A
+warning: in the working copy of 'Agenda.txt', LF will be replaced by CRLF the next time Git touches it
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git commit -m "commit de agenda"
+[main (root-commit) 6bbebf6] commit de agenda
+ 1 file changed, 4 insertions(+)
+ create mode 100644 Agenda.txt
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git log --graph
+* commit 6bbebf6f7ccae299b104f5d3dd94c07b0f351eb6 (HEAD -> main)
+  Author: Sergio Gerez <gerezsergio19@gmail.com>
+  Date:   Fri Sep 4 22:28:47 2026 -0300
+
+      commit de agenda
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git branch SergioGerez
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git branch
+  SergioGerez
+* main
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git checkout SergioGerez
+Switched to branch 'SergioGerez'
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ git status
+On branch SergioGerez
+nothing to commit, working tree clean
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ cat Agenda.txt
+Carlos = 123456789
+Lucas = 987654321
+
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ git log --graph
+* commit 6bbebf6f7ccae299b104f5d3dd94c07b0f351eb6 (HEAD -> SergioGerez, main)
+  Author: Sergio Gerez <gerezsergio19@gmail.com>
+  Date:   Fri Sep 4 22:28:47 2026 -0300
+
+      commit de agenda
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ nano Agenda.txt
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ cat Agenda.txt
+Carlos = 123456789
+Alberto = 135792468
+
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ git status
+On branch SergioGerez
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Agenda.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ git add -A
+warning: in the working copy of 'Agenda.txt', LF will be replaced by CRLF the next time Git touches it
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ git commit -m "commit de branch"
+[SergioGerez f9affc4] commit de branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ git log --graph
+* commit f9affc439554e0613c014eddf38fce5d5c2a12a7 (HEAD -> SergioGerez)
+| Author: Sergio Gerez <gerezsergio19@gmail.com>
+| Date:   Fri Sep 4 22:33:41 2026 -0300
+|
+|     commit de branch
+|
+* commit 6bbebf6f7ccae299b104f5d3dd94c07b0f351eb6 (main)
+  Author: Sergio Gerez <gerezsergio19@gmail.com>
+  Date:   Fri Sep 4 22:28:47 2026 -0300
+
+      commit de agenda
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (SergioGerez)
+$ git checkout main
+Switched to branch 'main'
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ cat Agenda.txt
+Carlos = 123456789
+Lucas = 987654321
+
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ nano Agenda.txt
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git checkout SergioGerez
+error: Your local changes to the following files would be overwritten by checkout:
+        Agenda.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git status
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Agenda.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git add -A
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git add -m "commit2 de main"
+error: unknown switch `m'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --[no-]dry-run    dry run
+    -v, --[no-]verbose    be verbose
+
+    -i, --[no-]interactive
+                          interactive picking
+    -p, --[no-]patch      select hunks interactively
+    --[no-]auto-advance   auto advance to the next file when selecting hunks interactively
+    -U, --unified <n>     generate diffs with <n> lines context
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    -e, --[no-]edit       edit current diff and apply
+    -f, --[no-]force      allow adding otherwise ignored files
+    -u, --[no-]update     update tracked files
+    --[no-]renormalize    renormalize EOL of tracked files (implies -u)
+    -N, --[no-]intent-to-add
+                          record only the fact that the path will be added later
+    -A, --[no-]all        add changes from all tracked and untracked files
+    --[no-]ignore-removal ignore paths removed in the working tree (same as --no-all)
+    --[no-]refresh        don't add, only refresh the index
+    --[no-]ignore-errors  just skip files which cannot be added because of errors
+    --[no-]ignore-missing check if - even missing - files are ignored in dry run
+    --[no-]sparse         allow updating entries outside of the sparse-checkout cone
+    --[no-]chmod (+|-)x   override the executable bit of the listed files
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git commit -m "commit2 de main"
+[main 719a7b7] commit2 de main
+ 1 file changed, 3 insertions(+)
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git log --graph
+* commit 719a7b7280ad4aa8d3610a27f2092c84a21d474c (HEAD -> main)
+| Author: Sergio Gerez <gerezsergio19@gmail.com>
+| Date:   Fri Sep 4 22:38:31 2026 -0300
+|
+|     commit2 de main
+|
+* commit 6bbebf6f7ccae299b104f5d3dd94c07b0f351eb6
+  Author: Sergio Gerez <gerezsergio19@gmail.com>
+  Date:   Fri Sep 4 22:28:47 2026 -0300
+
+      commit de agenda
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git checkout main
+Already on 'main'
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git merge SergioGerez
+Auto-merging Agenda.txt
+CONFLICT (content): Merge conflict in Agenda.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main|MERGING)
+$ cat Agenda.txt
+Carlos = 123456789
+<<<<<<< HEAD
+Lucas = 987654321
+Martin = 246813579
+Daniel = 975318642
+
+=======
+Alberto = 135792468
+>>>>>>> SergioGerez
+
+
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main|MERGING)
+$ nano Agenda.txt
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main|MERGING)
+$ git commit -am "merge"
+[main 246b2ca] merge
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git log --graph
+*   commit 246b2caefe94a63efb9f8ea015d3c40c87970830 (HEAD -> main)
+|\  Merge: 719a7b7 f9affc4
+| | Author: Sergio Gerez <gerezsergio19@gmail.com>
+| | Date:   Fri Sep 4 22:43:56 2026 -0300
+| |
+| |     merge
+| |
+| * commit f9affc439554e0613c014eddf38fce5d5c2a12a7 (SergioGerez)
+| | Author: Sergio Gerez <gerezsergio19@gmail.com>
+| | Date:   Fri Sep 4 22:33:41 2026 -0300
+| |
+| |     commit de branch
+| |
+* | commit 719a7b7280ad4aa8d3610a27f2092c84a21d474c
+|/  Author: Sergio Gerez <gerezsergio19@gmail.com>
+|   Date:   Fri Sep 4 22:38:31 2026 -0300
+|
+|       commit2 de main
+|
+* commit 6bbebf6f7ccae299b104f5d3dd94c07b0f351eb6
+  Author: Sergio Gerez <gerezsergio19@gmail.com>
+  Date:   Fri Sep 4 22:28:47 2026 -0300
+
+      commit de agenda
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git pull origin main
+fatal: couldn't find remote ref main
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+$ git push origin SergioGerez
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 516 bytes | 516.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/SerAle11/SergioGerezGIT
+ * [new branch]      SergioGerez -> SergioGerez
+
+Sergio@DESKTOP-QNASCMN MINGW64 ~/desktop/SergioGerezGIT (main)
+
